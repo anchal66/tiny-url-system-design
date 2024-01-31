@@ -1,7 +1,5 @@
 package com.anchal.tinyurlsystemdesign;
 
-import org.springframework.stereotype.Component;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
