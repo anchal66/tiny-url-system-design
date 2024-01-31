@@ -20,7 +20,7 @@ public class TinyUrlService {
     }
     public String saveUrl(UrlReqest urlReqest){
         String hashedString = HashUtil.hashString(urlReqest.url());
-        hashedString = hashedString.substring(0, 10);
+        hashedString = hashedString.substring(0, 15);
         TinyUrl tinyUrl = TinyUrl.builder().shortUrl(hashedString).url(urlReqest.url()).build();
         tinyUrlRepository.save(tinyUrl);
         return tinyUrl.getShortUrl();
