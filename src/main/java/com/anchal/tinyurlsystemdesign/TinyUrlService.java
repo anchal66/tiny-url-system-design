@@ -14,11 +14,12 @@ public class TinyUrlService {
         this.tinyUrlRepository = tinyUrlRepository;
     }
 
-    public String getUrl(String url){
+    public String getUrl(String url) {
         List<TinyUrl> tinyUrlByShortUrl = tinyUrlRepository.findTinyUrlByShortUrl(url);
         return tinyUrlByShortUrl.get(0).getUrl();
     }
-    public String saveUrl(UrlReqest urlReqest){
+
+    public String saveUrl(UrlReqest urlReqest) {
         String hashedString = HashUtil.hashString(urlReqest.url());
         hashedString = hashedString.substring(0, 15);
         TinyUrl tinyUrl = TinyUrl.builder().shortUrl(hashedString).url(urlReqest.url()).build();
